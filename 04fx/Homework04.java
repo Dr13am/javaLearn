@@ -7,7 +7,7 @@ import java.util.concurrent.*;
  *
  * 一个简单的代码参考：
  */
-public class Homework03 {
+public class Homework04 {
     
     public static void main(String[] args) {
         
@@ -16,10 +16,10 @@ public class Homework03 {
         // 在这里创建一个线程或线程池，
         // 异步执行 下面方法
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        Future<?> submit = executorService.submit((Runnable) Homework03::sum);
+        Future<?> submit = executorService.submit(Homework04::sum);
         int result = 0; //这是得到的返回值
         try {
-            result = (int) submit.get();
+            result = (Integer)submit.get();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
